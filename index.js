@@ -1,5 +1,5 @@
 const express = require('express');
-const port = 8000;
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -16,8 +16,8 @@ app.set('views', './views');
 app.use(express.static('assets'));
 
 // Setting express to listen to port 8000
-app.listen(port, function(err){
-    if(err){
+app.listen(port, function(err) {
+    if (err) {
         console.log("Error Occurred while trying to run server on port : ", port);
         return;
     }
