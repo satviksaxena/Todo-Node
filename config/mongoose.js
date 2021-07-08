@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-const monogoConnection = process.env.MONGODB_URL || DATABASE_LOCAL
-mongoose.connect(monogoConnection, { useNewUrlParser: true, useUnifiedTopology: true });
+const mongoConnection = process.env.MONGODB_URL || DATABASE_LOCAL
+console.log(mongoConnection)
+mongoose.connect(mongoConnection, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'error connecting to db'));
